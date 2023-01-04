@@ -2,7 +2,8 @@
 //import 'package:disenosp2/labs/circular_progress.dart';
 //import 'package:disenosp2/pages/graficas_circulares_page.dart';
 //import 'package:disenosp2/labs/slideShow_page.dart';
-import 'package:disenosp2/pages/pinteres_page.dart';
+import 'package:disenosp2/pages/emergency_page.dart';
+//import 'package:disenosp2/pages/pinteres_page.dart';
 //import 'package:disenosp2/pages/slideShow_page.dart';
 //import 'package:disenosp2/retos/cuadrado_animado_pages.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diseños App',
-      home: PinteresPage(),
+      home: EmergencyPage(),
     );
   }
 }
