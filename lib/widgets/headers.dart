@@ -212,7 +212,8 @@ class _HeaderCurvo extends CustomPainter {
 }
 
 class HeaderWave extends StatelessWidget {
-  const HeaderWave({super.key});
+  final Color color;
+  const HeaderWave({super.key, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -221,20 +222,23 @@ class HeaderWave extends StatelessWidget {
       width: double.infinity,
       // color: Color(0xff615AAB),
       child: CustomPaint(
-        painter: _HeaderWave(),
+        painter: _HeaderWave(this.color),
       ),
     );
   }
 }
 
 class _HeaderWave extends CustomPainter {
+  final Color color;
+
+  _HeaderWave(this.color);
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint();
 
     //propiedades
 
-    paint.color = Color(0xff615AAB);
+    paint.color = color; // Color(0xff615AAB);
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 20;
 

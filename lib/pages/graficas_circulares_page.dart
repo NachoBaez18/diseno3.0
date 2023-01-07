@@ -1,9 +1,11 @@
 import 'dart:io';
 
+import 'package:disenosp2/theme/theme.dart';
 import 'package:disenosp2/widgets/radial_progrees_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class GraficasCircularesPage extends StatefulWidget {
   @override
@@ -37,7 +39,7 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
                   color: Colors.blue,
                 ),
                 CustomRadialPosgrees(
-                  porcentaje: porcentaje,
+                  porcentaje: porcentaje * 1.2,
                   color: Colors.red,
                 ),
               ],
@@ -46,11 +48,11 @@ class _GraficasCircularesPageState extends State<GraficasCircularesPage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CustomRadialPosgrees(
-                  porcentaje: porcentaje,
+                  porcentaje: porcentaje * 1.4,
                   color: Colors.green,
                 ),
                 CustomRadialPosgrees(
-                  porcentaje: porcentaje,
+                  porcentaje: porcentaje * 1.6,
                   color: Colors.pink,
                 ),
               ],
@@ -72,13 +74,14 @@ class CustomRadialPosgrees extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appTheme = Provider.of<ThemeChanger>(context).currentTheme;
     return Container(
       width: 200,
       height: 200,
       child: RadialProgreesWidget(
         porcentaje: porcentaje,
         colorPrimario: color,
-        colorSecundario: Colors.grey,
+        colorSecundario: appTheme.textTheme.bodyText1!.color ?? Colors.grey,
         grosorSecundario: 8,
         grosorPrimario: 7,
       ),

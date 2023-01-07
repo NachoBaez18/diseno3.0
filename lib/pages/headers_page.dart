@@ -1,15 +1,22 @@
 import 'package:disenosp2/pages/animaciones_page.dart';
+import 'package:disenosp2/theme/theme.dart';
+import 'package:disenosp2/widgets/headers.dart';
 //import 'package:disenosp2/widgets/headers.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class HeaderPage extends StatelessWidget {
   const HeaderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final appTheme =
+        Provider.of<ThemeChanger>(context).currentTheme.accentColor;
     return Scaffold(
-      body: AnimacionesPage(),
+      body: HeaderWave(
+        color: appTheme,
+      ),
     );
   }
 }
